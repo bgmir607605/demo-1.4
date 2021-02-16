@@ -43,7 +43,7 @@ AppAsset::register($this);
         if(Yii::$app->user->identity->admin == 1){
             $items[] = ['label' => 'Административная панель', 'url' => ['/admin']];
         } else {
-            $items[] = ['label' => 'Личный кабинет', 'url' => ['/user']];
+            $items[] = ['label' => 'Личный кабинет', 'url' => ['/lk']];
         }
         $items[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
