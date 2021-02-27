@@ -30,13 +30,28 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'description:ntext',
             'timestamp',
-            'idUser',
+            // 'idUser',
             //'idCategory',
-            //'status',
+            'status',
             //'photoBefore',
             //'photoAfter',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{cancel} {solve}',
+                'buttons' => [
+                    'cancel' => function($url, $model){
+                        if($model->status == 'Новая'){
+                            return Html::a('Отклонить', ['/problem/cancel', 'id' => $model->id]);
+                        }
+                    },
+                    'solve' => function($url, $model){
+                        if($model->status == 'Новая'){
+                            return Html::a('Решить', ['/problem/solve', 'id' => $model->id]);
+                        }
+                    },
+                ]
+            ],
         ],
     ]); ?>
 

@@ -70,6 +70,8 @@ class ProblemSearch extends Problem
             ->andFilterWhere(['like', 'photoBefore', $this->photoBefore])
             ->andFilterWhere(['like', 'photoAfter', $this->photoAfter]);
 
+            $query->orderBy(['timestamp' => SORT_DESC]);
+
         return $dataProvider;
     }
 
