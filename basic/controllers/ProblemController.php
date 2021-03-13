@@ -153,7 +153,7 @@ class ProblemController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->photoAfter = UploadedFile::getInstance($model, 'photoAfter');
             $newFileName = md5($model->photoAfter->baseName . '.' . $model->photoAfter->extension. time()). '.' . $model->photoAfter->extension;
-            $model->photoAfter->saveAs('@app/web/uploads/' . $newFileName);
+            $model->photoAfter->saveAs('@webroot/uploads/' . $newFileName);
             $model->photoAfter = $newFileName;
             $model->status = 'Решена';
             $model->save();

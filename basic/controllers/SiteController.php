@@ -132,7 +132,7 @@ class SiteController extends Controller
 
     public function actionCounter()
     {
-        $problems = Problem::find()->where(['status' => 'Решена'])->orderBy(['timestamp' => SORT_DESC])->limit(4)->all();
+        $problems = Problem::find()->where(['status' => 'Решена'])->orderBy(['timestamp' => SORT_DESC])->all();
         return Yii::$app->response->content = count($problems);
     }
 }

@@ -130,7 +130,7 @@ class LkController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->photoBefore = UploadedFile::getInstance($model, 'photoBefore');
             $newFileName = md5($model->photoBefore->baseName . '.' . $model->photoBefore->extension. time()). '.' . $model->photoBefore->extension;
-            $model->photoBefore->saveAs('@app/web/uploads/' . $newFileName);
+            $model->photoBefore->saveAs('@webroot/uploads/' . $newFileName);
             $model->photoBefore = $newFileName;
             $model->idUser = Yii::$app->user->identity->id;
             $model->save();

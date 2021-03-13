@@ -113,3 +113,8 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.myLogo {
+    height: inherit;
+    margin-top: -15px;
+}
